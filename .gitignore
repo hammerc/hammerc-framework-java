@@ -1,6 +1,12 @@
-*.class
+# Build and Release Folders
+bin/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# Other files and folders
+.metadata/
+.settings/
+
+# Project files, i.e. `.classpath` and `.project`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse.
+.classpath
+.project
