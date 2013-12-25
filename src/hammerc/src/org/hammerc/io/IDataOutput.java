@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2011-2014 hammerc.org
+ * See LICENSE.txt for full license information.
+ */
 package org.hammerc.io;
 
 import java.math.BigInteger;
