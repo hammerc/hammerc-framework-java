@@ -127,7 +127,7 @@ public class ByteArrayOutput implements IDataOutput
 			switch(ti.type)
 			{
 				case TypeInfo.BOOLEAN:
-					if((boolean) ti.value)
+					if(((Boolean) ti.value).booleanValue())
 					{
 						byteBuffer.put((byte) 1);
 					}
@@ -137,16 +137,16 @@ public class ByteArrayOutput implements IDataOutput
 					}
 					break;
 				case TypeInfo.BYTE:
-					byteBuffer.put((byte) ti.value);
+					byteBuffer.put(((Byte) ti.value).byteValue());
 					break;
 				case TypeInfo.UNSIGNED_BYTE:
-					byteBuffer.put(UnsignedUtil.writeUnsignedByte((short) ti.value));
+					byteBuffer.put(UnsignedUtil.writeUnsignedByte(((Short) ti.value).shortValue()));
 					break;
 				case TypeInfo.SHORT:
-					byteBuffer.putShort((short) ti.value);
+					byteBuffer.putShort(((Short) ti.value).shortValue());
 					break;
 				case TypeInfo.UNSIGNED_SHORT:
-					numBytes = UnsignedUtil.writeUnsignedShort((int) ti.value);
+					numBytes = UnsignedUtil.writeUnsignedShort(((Integer) ti.value).intValue());
 					if(this.endian().equals(ByteOrder.LITTLE_ENDIAN))
 					{
 						numBytes = ByteUtil.reverse(numBytes);
@@ -154,10 +154,10 @@ public class ByteArrayOutput implements IDataOutput
 					byteBuffer.put(numBytes);
 					break;
 				case TypeInfo.INT:
-					byteBuffer.putInt((int) ti.value);
+					byteBuffer.putInt(((Integer) ti.value).intValue());
 					break;
 				case TypeInfo.UNSIGNED_INT:
-					numBytes = UnsignedUtil.writeUnsignedInt((long) ti.value);
+					numBytes = UnsignedUtil.writeUnsignedInt(((Long) ti.value).longValue());
 					if(this.endian().equals(ByteOrder.LITTLE_ENDIAN))
 					{
 						numBytes = ByteUtil.reverse(numBytes);
@@ -165,7 +165,7 @@ public class ByteArrayOutput implements IDataOutput
 					byteBuffer.put(numBytes);
 					break;
 				case TypeInfo.LONG:
-					byteBuffer.putLong((long) ti.value);
+					byteBuffer.putLong(((Long) ti.value).longValue());
 					break;
 				case TypeInfo.UNSIGNED_LONG:
 					numBytes = UnsignedUtil.writeUnsignedLong((BigInteger) ti.value);
@@ -176,10 +176,10 @@ public class ByteArrayOutput implements IDataOutput
 					byteBuffer.put(numBytes);
 					break;
 				case TypeInfo.FLOAT:
-					byteBuffer.putFloat((float) ti.value);
+					byteBuffer.putFloat(((Float) ti.value).floatValue());
 					break;
 				case TypeInfo.DOUBLE:
-					byteBuffer.putDouble((double) ti.value);
+					byteBuffer.putDouble(((Double) ti.value).doubleValue());
 					break;
 				case TypeInfo.UTF:
 					bytes = bytesList.get(i++);
