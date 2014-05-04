@@ -2,7 +2,7 @@
  * Copyright (c) 2011-2014 hammerc.org
  * See LICENSE.txt for full license information.
  */
-package org.hammerc.marble;
+package org.hammerc.marble.tools;
 
 import java.util.ArrayList;
 import java.util.Collections;
