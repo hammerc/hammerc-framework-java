@@ -163,6 +163,7 @@ public class PackageSorter implements Cloneable
 		_packageList.clear();
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected Object clone() throws CloneNotSupportedException
 	{
