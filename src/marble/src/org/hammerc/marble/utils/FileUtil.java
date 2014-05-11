@@ -19,6 +19,16 @@ import java.util.regex.Pattern;
 public class FileUtil
 {
 	/**
+	 * 系统路径分隔符.
+	 */
+	public static final String SEPARATOR = File.separator;
+	
+	/**
+	 * 系统换行符.
+	 */
+	public static final String LINE_SEPARATOR = System.getProperty("line.separator", "\r\n");
+	
+	/**
 	 * 保存数据到指定文件.
 	 * @param path 文件完整路径名.
 	 * @param data 要保存的数据.
@@ -288,5 +298,40 @@ public class FileUtil
 		{
 			directoty.mkdirs();
 		}
+	}
+	
+	/**
+	 * 格式化路径为当前系统可使用的路径, 去掉末尾的路径分隔符.
+	 * @param path 带格式化的路径.
+	 * @return 格式化的路径.
+	 */
+	public static String formatPath(String path)
+	{
+		String separator = SEPARATOR;
+		if(separator.equals("\\"))
+		{
+			separator = "\\\\";
+		}
+		path = path.replaceAll("\\\\", separator);
+		path = path.replaceAll("/", separator);
+		int index = path.lastIndexOf(SEPARATOR);
+		if(index == path.length() - 1)
+		{
+			path = path.substring(0, path.length() - 1);
+		}
+		return path;
+	}
+	
+	/**
+	 * 统一换行符为系统默认的换行符.
+	 * @param source 带处理文本.
+	 * @return 处理后的文本.
+	 */
+	public static String unifyEnter(String source)
+	{
+		source = source.replaceAll("\\r\\n", "\r");
+		source = source.replaceAll("\\n", "\r");
+		source = source.replaceAll("\\r", LINE_SEPARATOR);
+		return source;
 	}
 }
