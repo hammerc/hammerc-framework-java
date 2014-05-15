@@ -96,7 +96,7 @@ public class ByteArrayInput implements IDataInput
 	@Override
 	public int readUnsignedShort()
 	{
-		byte[] bytes = null;
+		byte[] bytes = new byte[2];
 		_byteBuffer.get(bytes, 0, 2);
 		if(this.endian().equals(ByteOrder.LITTLE_ENDIAN))
 		{
@@ -114,7 +114,7 @@ public class ByteArrayInput implements IDataInput
 	@Override
 	public long readUnsignedInt()
 	{
-		byte[] bytes = null;
+		byte[] bytes = new byte[4];
 		_byteBuffer.get(bytes, 0, 4);
 		if(this.endian().equals(ByteOrder.LITTLE_ENDIAN))
 		{
@@ -132,7 +132,7 @@ public class ByteArrayInput implements IDataInput
 	@Override
 	public BigInteger readUnsignedLong()
 	{
-		byte[] bytes = null;
+		byte[] bytes = new byte[8];
 		_byteBuffer.get(bytes, 0, 8);
 		if(this.endian().equals(ByteOrder.LITTLE_ENDIAN))
 		{
@@ -163,7 +163,7 @@ public class ByteArrayInput implements IDataInput
 	@Override
 	public String readUTFBytes(int length) throws UnsupportedEncodingException
 	{
-		byte[] bytes = null;
+		byte[] bytes = new byte[length];
 		_byteBuffer.get(bytes, 0, length);
 		return new String(bytes, "UTF-8");
 	}
@@ -171,7 +171,7 @@ public class ByteArrayInput implements IDataInput
 	@Override
 	public String readMultiBytes(int length, String charSet) throws UnsupportedEncodingException
 	{
-		byte[] bytes = null;
+		byte[] bytes = new byte[length];
 		_byteBuffer.get(bytes, 0, length);
 		return new String(bytes, charSet);
 	}
