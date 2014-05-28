@@ -59,6 +59,18 @@ public class ByteArrayInput implements IDataInput
 		return _byteBuffer.order();
 	}
 	
+	@Override
+	public void position(int newPosition)
+	{
+		_byteBuffer.position(newPosition);
+	}
+	
+	@Override
+	public int position()
+	{
+		return _byteBuffer.position();
+	}
+	
 	/**
 	 * 获取字节缓冲对象.
 	 * @return 字节缓冲对象.

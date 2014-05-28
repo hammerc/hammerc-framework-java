@@ -33,6 +33,18 @@ public interface IDataInput
 	public ByteOrder endian();
 	
 	/**
+	 * 设置指针位置.
+	 * @param newPosition 新的指针位置.
+	 */
+	public void position(int newPosition);
+	
+	/**
+	 * 获取指针位置.
+	 * @return 指针位置.
+	 */
+	public int position();
+	
+	/**
 	 * 读取布尔值.
 	 * @return 布尔值.
 	 */
