@@ -4,9 +4,14 @@
  */
 package org.hammerc.database;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -83,6 +88,17 @@ public class QueryResult
 	 * @param columnName 该结果位于的字段名称.
 	 * @return 指定的查询结果.
 	 */
+	public short getShort(int row, String columnName)
+	{
+		return (Short) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
 	public int getInteger(int row, String columnName)
 	{
 		return (Integer) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
@@ -97,6 +113,17 @@ public class QueryResult
 	public long getLong(int row, String columnName)
 	{
 		return (Long) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
+	public BigInteger getBigInteger(int row, String columnName)
+	{
+		return (BigInteger) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
 	}
 	
 	/**
@@ -127,9 +154,64 @@ public class QueryResult
 	 * @param columnName 该结果位于的字段名称.
 	 * @return 指定的查询结果.
 	 */
+	public BigDecimal getBigDecimal(int row, String columnName)
+	{
+		return (BigDecimal) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
 	public String getString(int row, String columnName)
 	{
 		return (String) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
+	public Date getDate(int row, String columnName)
+	{
+		return (Date) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
+	public Time getTime(int row, String columnName)
+	{
+		return (Time) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
+	public Timestamp getTimestamp(int row, String columnName)
+	{
+		return (Timestamp) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
+	}
+	
+	/**
+	 * 获取一个指定的查询结果.
+	 * @param row 该结果的行数.
+	 * @param columnName 该结果位于的字段名称.
+	 * @return 指定的查询结果.
+	 */
+	public byte[] getBytes(int row, String columnName)
+	{
+		return (byte[]) _result.get(row).get(_columnNames.get(columnName.toLowerCase()));
 	}
 	
 	/**
