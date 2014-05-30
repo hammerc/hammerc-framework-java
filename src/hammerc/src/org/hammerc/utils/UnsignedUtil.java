@@ -30,7 +30,7 @@ public class UnsignedUtil
 	 */
 	public static int readUnsignedShort(byte[] bytes)
 	{
-		return ((bytes[0] << 8 ) & 0xff00) + (bytes[1] & 0xff);
+		return ((bytes[0] << 8) & 0xff00) + (bytes[1] & 0xff);
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class UnsignedUtil
 	 */
 	public static long readUnsignedInt(byte[] bytes)
 	{
-		return (long) (bytes[0] << 24 & 0xff000000) + (bytes[1] << 16 & 0xff0000) + (bytes[2] << 8 & 0xff00) + (bytes[3] & 0xff);
+		return ((long) ((bytes[0] << 24 & 0xff000000) + (bytes[1] << 16 & 0xff0000) + (bytes[2] << 8 & 0xff00) + (bytes[3] & 0xff))) & 0xffffffffL;
 	}
 	
 	/**
