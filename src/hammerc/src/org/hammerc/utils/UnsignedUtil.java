@@ -50,7 +50,7 @@ public class UnsignedUtil
 	 */
 	public static BigInteger readUnsignedLong(byte[] bytes)
 	{
-		return new BigInteger(bytes);
+		return new BigInteger(1, bytes);
 	}
 	
 	/**
