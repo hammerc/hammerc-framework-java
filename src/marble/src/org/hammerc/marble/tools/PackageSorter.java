@@ -70,12 +70,12 @@ public class PackageSorter implements Cloneable
 	}
 	
 	/**
-	 * 获取格式化的导入包文本,
+	 * 获取格式化的导入包文本.
 	 * @param useSpace 每个包名前面是使用空格还是使用 Tab.
 	 * @param numSpace 每个包名前面使用的空格或 Tab 的个数.
 	 * @param useSeparatorLine 是否根据包的根目录添加空行.
 	 * @param lineSeparator 使用的换行符, 设置为 null 使用系统默认的换行符.
-	 * @return 格式化的导入包文本,
+	 * @return 格式化的导入包文本.
 	 */
 	public String getPackageString(boolean useSpace, int numSpace, boolean useSeparatorLine, String lineSeparator)
 	{
